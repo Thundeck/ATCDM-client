@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -17,6 +20,7 @@
 }
 
 body {
+  font-family: 'Roboto', sans-serif;
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
@@ -24,4 +28,20 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+
+::-webkit-scrollbar {
+  width: 8px; /* Ancho del scrollbar */
+}
+
+/* Estilo del track del scrollbar */
+::-webkit-scrollbar-track {
+  background: #a1e2bd; /* Color del track */
+}
+
+/* Estilo del thumb del scrollbar */
+::-webkit-scrollbar-thumb {
+  background-color: #00b04b; /* Color del thumb */
+  border-radius: 20px; /* Redondez del thumb */
+  border: 1px solid #a1e2bd; /* Borde y separación del thumb */
 }
