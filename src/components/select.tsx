@@ -1,16 +1,16 @@
-import { Country, Player } from "@/interfaces";
+import { Api, Player } from "@/interfaces";
 import React, { useState } from "react";
 import { Check, ChevronUp } from "react-feather";
 
 interface Props {
-  values: Country[];
+  values: Api[];
   setValues?: React.Dispatch<React.SetStateAction<string>>;
   setPlayers?: React.Dispatch<React.SetStateAction<Player[]>>;
   setDefaultPlayers?: React.Dispatch<React.SetStateAction<Player[]>>;
   children: string;
 }
 
-const initialState: Country = {
+const initialState: Api = {
   id: "",
   name: "",
   image: "",
@@ -27,7 +27,7 @@ const Select = ({
   const [open, setOpen] = useState(false);
   const [selected, setSelected] = useState(initialState);
 
-  const handleValues = (e: Country) => {
+  const handleValues = (e: Api) => {
     if (e.id && setValues) {
       setValues(e.id);
     }

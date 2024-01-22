@@ -13,7 +13,7 @@ export interface Team {
   players?: Player[];
 }
 
-export interface Country {
+export interface Api {
   id?: string;
   name: string;
   image: string;

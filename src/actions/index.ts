@@ -1,4 +1,4 @@
-import { Country, Player, Team } from "@/interfaces";
+import { Api, Player, Team } from "@/interfaces";
 import axios from "axios";
 import { NotificationFailure, NotificationPromise } from "../utils/tostify";
 
@@ -185,7 +185,7 @@ export const getAllCountries = async (
         })
       )
       .filter(
-        (e: Country) =>
+        (e: Api) =>
           e.image.length && e.name !== "World" && e.name !== "World cup"
       );
     if (data) setCountries(refactorData);
