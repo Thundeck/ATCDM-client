@@ -7,13 +7,14 @@ import { useModal } from "@/hooks/useModal";
 import Image from "next/image";
 import { useParams } from "next/navigation";
 import { ChangeEvent, useEffect, useState } from "react";
-import { Check, Edit2, Plus, X } from "react-feather";
+import { ArrowLeft, Check, Edit2, Home, Plus, X } from "react-feather";
 import Court from "../../../public/football-team-bench-svgrepo-com.svg";
 import atcLogo from "../../../public/logo-atc.svg";
 import Stadium from "../../../public/stadium.jpeg";
 import { Player, Team } from "../../interfaces";
 import CardContainer from "@/components/cardContainer";
 import InputGoogle from "@/components/inputGoogle";
+import Link from "next/link";
 
 const initialState: Team = {
   name: "",
@@ -24,7 +25,6 @@ const initialState: Team = {
 const TeamDetails = () => {
   const { teamId } = useParams();
   const [teamDetails, setTeamDetails] = useState<Team>(initialState);
-  console.log(teamDetails);
   const { isOpen, modalOpen, modalClose } = useModal(false);
   const [edit, setEdit] = useState(false);
   const [input, setInput] = useState("");
@@ -70,11 +70,23 @@ const TeamDetails = () => {
 
   return (
     <main
-      className="flex justify-center items-center min-h-screen bg-cover bg-center  py-10"
+      className="flex justify-center items-center min-h-screen bg-cover bg-center  py-10 "
       style={{
         backgroundImage: `url(${Stadium.src})`,
       }}
     >
+      <Link
+        href={"/home"}
+        className="absolute top-5 left-24 p-3 bg-white rounded-full active:bg-gray-300 lg:hover:bg-gray-300"
+      >
+        <Home className=" text-green-600" />
+      </Link>
+      <Link
+        href={"/teams"}
+        className="absolute top-5 left-10 p-3 bg-white rounded-full active:bg-gray-300 lg:hover:bg-gray-300"
+      >
+        <ArrowLeft className=" text-green-600" />
+      </Link>
       <div className="bg-white p-5 rounded-lg min-w-[80%] max-w-[90%] lg:min-w-[40%] flex flex-col gap-3">
         <section className="flex flex-row justify-end items-center gap-1 h-fit ">
           <Image
@@ -154,6 +166,7 @@ const TeamDetails = () => {
               src={Court}
               alt="empty-court"
             />
+
             <button
               onClick={modalOpen}
               className=" bg-green-600 py-2 px-4 font-play rounded-lg text-2xl active:bg-green-500 lg:hover:bg-green-500 shadow-lg shadow-gray-400 "

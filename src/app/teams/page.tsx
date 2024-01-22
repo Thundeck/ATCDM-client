@@ -3,12 +3,12 @@
 import Image from "next/image";
 import atcLogo from "../../../public/logo-atc.svg";
 import Stadium from "../../../public/stadium.jpeg";
-import { Home, Plus } from "react-feather";
+import { Home, Plus, X } from "react-feather";
 import { useModal } from "../../hooks/useModal";
 import Modal from "@/components/modal";
 import CreateTeam from "@/components/createTeam";
 import { useEffect, useState } from "react";
-import { getAllTeams } from "@/actions";
+import { deleteTeam, getAllTeams } from "@/actions";
 import { Team } from "@/interfaces";
 import noTeams from "../../../public/football-team-flatline.svg";
 import Link from "next/link";
@@ -24,6 +24,16 @@ const Teams = () => {
   const hadleSetTeams = (team: Team) => {
     if (team) {
       setTeams([...teams, team]);
+    }
+  };
+
+  const handleDeleteTeam = (
+    id: string,
+    event: React.MouseEvent<SVGElement, MouseEvent>
+  ) => {
+    event.stopPropagation();
+    if (id) {
+      deleteTeam(id, setTeams);
     }
   };
 
@@ -59,18 +69,26 @@ const Teams = () => {
           {teams.length ? (
             <ul className="flex flex-col gap-2 shadow-inner shadow-gray-400 rounded-lg p-1 mt-3">
               {teams?.map((e) => (
-                <Link
-                  className="flex justify-start gap-3 px-4 items-center py-1 lg:hover:bg-gray-200 shadow-sm shadow-gray-400 rounded-lg"
-                  href={`/${e?._id}`}
-                  key={e?._id}
-                >
-                  <img
-                    src={e?.logo}
-                    alt={e?.name}
-                    className="max-w-20 lg:max-w-24 rounded-full drop-shadow-lg "
+                <div className="flex justify-between gap-3 px-4 items-center py-1 lg:hover:bg-gray-200 shadow-sm shadow-gray-400 rounded-lg">
+                  <Link
+                    className="flex justify-start gap-3 px-4 items-center"
+                    href={`/${e?._id}`}
+                    key={e?._id}
+                  >
+                    <img
+                      src={e?.logo}
+                      alt={e?.name}
+                      className="max-w-20 lg:max-w-24 rounded-full drop-shadow-lg "
+                    />
+                    <p className="text-2xl font-play">{e?.name}</p>
+                  </Link>
+                  <X
+                    onClick={(event) =>
+                      e?._id && handleDeleteTeam(e?._id, event)
+                    }
+                    className="cursor-pointer text-white bg-green-600 active:bg-green-700 lg:hover:bg-green-700 rounded-full shadow-md shadow-gray-400"
                   />
-                  <p className="text-2xl font-play">{e?.name}</p>
-                </Link>
+                </div>
               ))}
             </ul>
           ) : (

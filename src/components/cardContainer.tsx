@@ -10,7 +10,7 @@ interface Props {
 }
 
 const CardContainer = ({ players, setPlayersArr, currentTeam }: Props) => {
-  const handleDeleteplayer = (id: string) => {
+  const handleDeletePlayer = (id: string) => {
     deletePlayer(id, setPlayersArr, currentTeam);
   };
 
@@ -36,7 +36,7 @@ const CardContainer = ({ players, setPlayersArr, currentTeam }: Props) => {
           </div>
           <X
             className="cursor-pointer text-white bg-green-600 active:bg-green-700 lg:hover:bg-green-700 rounded-full shadow-md shadow-gray-400"
-            onClick={() => handleDeleteplayer(p.player_id)}
+            onClick={() => handleDeletePlayer(p.player_id)}
           />
         </li>
       ))}
