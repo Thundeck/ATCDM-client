@@ -11,9 +11,6 @@ Choose your crest, the name of the team and make your dream match come true!
 TypeScript (TS) - Programming language used
 Next.js - The web framework used
 Tailwind CSS - Used for layout and styling
-MongoDB - NoSQL database used
-Mongoose - Used for modeling the application data
-Express.js - Framework for Node.js
 React-Toastify - Used to add notifications to the application
 
 ## Installation
