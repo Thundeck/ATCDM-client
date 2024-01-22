@@ -6,6 +6,13 @@
 Have you ever thought about watching a 5-a-side soccer game with your favorite players from around the world?
 Choose your crest, the name of the team and make your dream match come true!
 
+## Built with 🛠️
+
+TypeScript (TS) - Programming language used
+Next.js - The web framework used
+Tailwind CSS - Used for layout and styling
+React-Toastify - Used to add notifications to the application
+
 ## Installation
 
 Follow these steps to install and configure this project on your local machine:
