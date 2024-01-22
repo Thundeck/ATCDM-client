@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+![ATC-dream-match-banner](./public/banner.png)
 
-## Getting Started
 
-First, run the development server:
+# ATC - Dream Match
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Have you ever thought about watching a 5-a-side soccer game with your favorite players from around the world?
+Choose your crest, the name of the team and make your dream match come true!
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Follow these steps to install and configure this project on your local machine:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- Clone this repository with `git clone https://github.com/Thundeck/ATCDM-client.git`.
+- Install the dependencies with `npm install`.
+- Make a copy of the `example.env.local` file, rename it to `.env.local` and fill it with your values.
 
-## Learn More
+## Usage
 
-To learn more about Next.js, take a look at the following resources:
+To start the project, run `npm run dev`. Then, open `http://localhost:3000` in your browser.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Contribution
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Contributions are welcome. To contribute:
 
-## Deploy on Vercel
+1. make a fork of this repository.
+2. Create a new branch with `git checkout -b name-of-your-branch`.
+3. Make your changes and then commit your changes with `git commit -m 'Description of your changes'`.
+4. Push your branch with `git push origin branch-name`.
+5. Create a new pull request from your fork.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## License
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This project is licensed under the MIT license.
+
+## Contact
+
+If you have any questions or comments, feel free to contact me:
+
+- GitHub: Thundeck
+- Email: briangleguizamon@gmail.com or thundekk@gmail.com
+- Linkedin: https://www.linkedin.com/in/thundeck/
