@@ -2,7 +2,7 @@ import { Api, Player, Team } from "@/interfaces";
 import axios from "axios";
 import { NotificationFailure, NotificationPromise } from "../utils/tostify";
 
-const server = "192.168.0.112";
+const server = "localhost";
 
 export const getAllTeams = async (
   setTeams: React.Dispatch<React.SetStateAction<Team[]>>
